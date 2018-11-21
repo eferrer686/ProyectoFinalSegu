@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Text AES</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/css.css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../js/fileManager.js"></script>
+    <script src="../js/aes.js"></script>
+    <script src="../js/js.js"></script>
+</head>
+
+<body>
+    <div class="topnav">
+        <table>
+            <tr>
+                <td><a href="../index.html">Home</a></td>
+                <td><a href="../AEShtml/encryptText.html">Encrypt Text</a></td>
+                <td><a href="../AEShtml/decryptText.html">Decrypt Text</a></td>
+                <td><a href="../AEShtml/encryptFile.html">Encrypt File</a></td>
+                <td><a href="../AEShtml/decryptFile.html">Decrypt File</a></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="fileDiv">
+        <h2>Decrypt File</h2>
+
+        <input type="file" class="btn  btn-sm float-left" name="fileDecrypt" id="fileDecrypt">
+
+        <input type="button" value="Decrypt" onclick="fileDecrypt()">
+
+
+        <table>
+            <tr>
+                <td>
+                    <p>Key:</p>
+                </td>
+                <td><input type="password" name="password" id="password"></td>
+                <td><input type="button" value="Show Key" name="Ver password" id="viewPassword" onclick="changeInput()"></td>
+            </tr>
+        </table>
+
+    </div>
+    <script>changeInput();</script>
+</body>
+
+</html>

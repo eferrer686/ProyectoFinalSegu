@@ -2,7 +2,14 @@ function encryptText(){
     password = document.getElementById('password').value;
     text = document.getElementById('encryptText').value;
 
-    encrypt =  Aes.Ctr.encrypt(text, password, 256);
+    try{
+        text = btoa(text);
+        encrypt =  Aes.Ctr.encrypt(text, password, 256);
+
+    }
+    catch(err){
+        alert("Not valid Base 64 text");
+    }
 
 
     document.getElementById('encryptText').value = encrypt;
@@ -11,10 +18,14 @@ function decryptText(){
     password = document.getElementById('password').value;
     text = document.getElementById('decryptText').value;
 
-    decrypt =  Aes.Ctr.decrypt(text, password, 256);
-
-    console.log(decrypt);
     
+    try{
+        
+        decrypt =  atob(Aes.Ctr.decrypt(text, password, 256));
+    }
+    catch(err){
+        alert("Not valid Base 64 text");
+    }
 
     document.getElementById('decryptText').value = decrypt;
 }

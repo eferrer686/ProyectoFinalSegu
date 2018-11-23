@@ -45,7 +45,10 @@ a{
     color: black;
     font-size: 20px;
     margin: 0px 20px;
-    
+}
+h5,.normal{
+    font-size: 14px;
+    margin: 0px;
 }
 a:hover{
     text-decoration: none;

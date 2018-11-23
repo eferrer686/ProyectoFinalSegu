@@ -524,7 +524,8 @@ function encryptFile(file,password) {
 
         // use Blob to save encrypted file
         var blob = new Blob([ciphertext], { type: 'text/plain' });
-        var filename = file.name+'.encrypted';
+        var filename = file.name.split("").reverse().join("").replace(/\./,'.trc.')+'';
+        var filename = filename.split("").reverse().join("");
         saveAs(blob, filename);
 
 
@@ -555,7 +556,7 @@ function decryptFile(file,password) {
 
         // use Blob to save decrypted file
         var blob = new Blob([contentBytes], { type: 'application/octet-stream' });
-        var filename = file.name.replace(/\.encrypted$/,'')+'';
+        var filename = file.name.replace(/\.crt.$/,'')+'';
         saveAs(blob, filename);
 
         $('#decrypt-file-time').html(((t2 - t1)/1000)+'s'); // display time taken
